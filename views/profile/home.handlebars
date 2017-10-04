@@ -1,0 +1,28 @@
+<div class="wrapper">
+<h1>Welcome Back, {{user}}</h1>
+<h3>Gabs from you and the fams</h3>
+<div class="allPosts">
+{{#each posts}}
+    <div class="postBox">
+      <div class="username">{{User.dataValues.username}} said</div>
+      <div class="postText">{{post}}</div>
+      <a class="likeInfoBtn" href="/gabble/{{id}}/likes"><div>
+        Likes: {{Likes.length}}
+      </div></a>
+      <p class="date">
+        {{posted}}
+      </p>
+        <div class="options">
+        {{#if isCurrentUser}}
+        <div>
+          <a class="myOptions" href="/gabble/{{id}}/edit">Edit</a>
+          <a class="myOptions" href="/gabble/{{id}}/delete">Delete</a>
+        </div>
+      {{else}}
+        <a href="/gabble/{{id}}/like">Like</a>
+      {{/if}}
+      </div>
+    </div>
+{{/each}}
+</div>
+</div>

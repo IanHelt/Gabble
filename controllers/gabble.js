@@ -93,7 +93,7 @@ GabbleController = {
     })
   },
 
-  updateform: function(req, res) {
+  toUpdateForm: function(req, res) {
     id = req.params.id;
     models.Post.findById(id).then(function(post){
       res.render('profile/update', {post: post});

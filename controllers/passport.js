@@ -71,7 +71,6 @@ passport.use('local-signup', new LocalStrategy({
           message: 'That username is already taken'
         });
       } else {
-        console.log("this is going to create user", user);
         let userPassword = generateHash(password);
         let data = {
           username: username,

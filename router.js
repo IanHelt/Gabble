@@ -11,7 +11,6 @@ module.exports = function(app) {
 
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
-
     return next();
     res.redirect('/');
   }
@@ -39,7 +38,7 @@ module.exports = function(app) {
     gabbleRouter.get('/:id/like', GabbleController.like);
     gabbleRouter.get('/:id/delete', GabbleController.delete);
     gabbleRouter.get('/:id/likes', GabbleController.displayLikes);
-    gabbleRouter.get('/:id/edit', GabbleController.updateform);
+    gabbleRouter.get('/:id/edit', GabbleController.toUpdateForm);
     gabbleRouter.post('/:id/update', GabbleController.update);
 
   app.use('/', userRouter);
